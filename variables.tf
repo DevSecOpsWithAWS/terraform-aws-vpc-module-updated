@@ -25,10 +25,10 @@ variable "igw_tags" {
   default = {}
 }
 
-variable "public_subnet_cidr" {
+variable "public_subnet_ids" {
   type = list
   validation{
-    condition = length(var.public_subnet_cidr) == 2
+    condition = length(var.public_subnet_ids) == 2
     error_message = "Please provide 2 valid public subnet CIDR"
   }
 }
@@ -42,10 +42,10 @@ variable "private_subnet_tags" {
 }
 
 
-variable "private_subnet_cidr" {
+variable "private_subnet_ids" {
   type = list
   validation{
-    condition = length(var.private_subnet_cidr) == 2
+    condition = length(var.private_subnet_ids) == 2
     error_message = "Please provide 2 valid private subnet CIDR"
   }
 }
@@ -55,10 +55,10 @@ variable "database_subnet_tags" {
 }
 
 
-variable "database_subnet_cidr" {
+variable "database_subnet_ids" {
   type = list
   validation{
-    condition = length(var.database_subnet_cidr) == 2
+    condition = length(var.database_subnet_ids) == 2
     error_message = "Please provide 2 valid database subnet CIDR"
   }
 }
